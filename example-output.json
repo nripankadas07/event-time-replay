@@ -1,0 +1,74 @@
+{
+  "watermark": 15,
+  "decisions": [
+    {
+      "id": "one",
+      "index": 0,
+      "watermark": 0,
+      "window": [
+        0,
+        10
+      ],
+      "disposition": "on_time"
+    },
+    {
+      "id": "two",
+      "index": 2,
+      "watermark": 10,
+      "window": [
+        0,
+        10
+      ],
+      "disposition": "late"
+    },
+    {
+      "id": "three",
+      "index": 4,
+      "watermark": 15,
+      "window": [
+        0,
+        10
+      ],
+      "disposition": "dropped"
+    }
+  ],
+  "emissions": [
+    {
+      "key": "k",
+      "start": 0,
+      "end": 10,
+      "count": 1,
+      "sum": 7,
+      "cause": {
+        "kind": "on_time",
+        "index": 1
+      }
+    },
+    {
+      "key": "k",
+      "start": 0,
+      "end": 10,
+      "count": 2,
+      "sum": 11,
+      "cause": {
+        "kind": "late_update",
+        "index": 2
+      }
+    }
+  ],
+  "purged": [
+    {
+      "key": "k",
+      "start": 0,
+      "end": 10,
+      "count": 2,
+      "sum": 11,
+      "cause": {
+        "kind": "purge",
+        "index": 3
+      }
+    }
+  ],
+  "remaining": [],
+  "policy": "integer tumbling windows; expiry is watermark >= end + allowed_lateness; no implicit flush"
+}

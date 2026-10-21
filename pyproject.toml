@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "event-time-replay"
+version = "0.1.0"
+description = "Replay explicit watermarks and tumbling-window events with accumulating emissions, late corrections, drop decisions and state eviction."
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+readme = "README.md"
+dependencies = []
+[project.scripts]
+event-time-replay = "event_time_replay:main"
+[tool.setuptools]
+py-modules = ["event_time_replay"]
