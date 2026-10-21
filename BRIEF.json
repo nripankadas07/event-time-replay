@@ -1,0 +1,38 @@
+{
+  "occurrence": "GH-20261021",
+  "state": "VALIDATED",
+  "demand": "Inferred; no verified request for this new tool.",
+  "acceptance": [
+    "The invented window emits sum7, corrects it to11, then drops an event at expiry.",
+    "Late update/drop/eviction boundary, negative timestamps, multi-key batch oracle, zero lateness, no flush, duplicate IDs and backward-watermark rejection.",
+    "Clean installed CLI outside checkout, error case and source preservation."
+  ],
+  "discovery": "Searchable README/topics and small reproducible example; no outreach/adoption claim.",
+  "inventory_compared": 208,
+  "mutual_distinction": "Schema evolution, OOXML formula structure, event-time state, expiry stock allocation and three-version text edits are separate products/users/contracts. Shared packaging is infrastructure.",
+  "originality": "Original AI-assisted code and invented fixtures; no third-party implementation/prose copied.",
+  "repo": "event-time-replay",
+  "user": "Streaming engineers reproducing a small watermark and late-event scenario offline.",
+  "pain": "An event log alone does not show when a window emits, retains state, corrects a result or drops a late event.",
+  "capability": "Replay explicit watermarks and tumbling-window events with accumulating emissions, late corrections, drop decisions and state eviction.",
+  "alternatives": [
+    "apache/flink",
+    "apache/beam",
+    "bytewax/bytewax"
+  ],
+  "highest": "apache/flink",
+  "query": "event time streaming",
+  "topics": [
+    "stream-processing",
+    "event-time",
+    "watermark",
+    "python"
+  ],
+  "expected": "The invented window emits sum7, corrects it to11, then drops an event at expiry.",
+  "limits": "One explicit global monotonic integer watermark; fixed windows [floor(t/size)*size,start+size), per key, exact integer count/sum. Up to5000 events; integers within +/-10^15, size>0 and lateness>=0. Own policy: first emission at watermark>=end, accepted later events emit accumulating corrections, purge/drop at watermark>=end+allowed_lateness. Timestamp<watermark is labeled late even if its window is not emitted. No implicit end flush. Unique event IDs required. No source connectors, inferred watermarks, sessions, sliding windows, processing-time triggers, recovery or full Beam/Flink/Bytewax equivalence.",
+  "distinct": "kafka-offset-audit checks broker offset ranges; clock-quorum-window checks clocks. This replays changing per-window state under a stated event-time policy, with no broker or wall clock.",
+  "checks": "Late update/drop/eviction boundary, negative timestamps, multi-key batch oracle, zero lateness, no flush, duplicate IDs and backward-watermark rejection.",
+  "primary": [
+    "https://beam.apache.org/documentation/programming-guide/#watermarks-and-late-data"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "size": 10,
+  "allowed_lateness": 5,
+  "initial_watermark": 0,
+  "events": [
+    {
+      "kind": "event",
+      "id": "one",
+      "timestamp": 2,
+      "key": "k",
+      "value": 7
+    },
+    {
+      "kind": "watermark",
+      "time": 10
+    },
+    {
+      "kind": "event",
+      "id": "two",
+      "timestamp": 3,
+      "key": "k",
+      "value": 4
+    },
+    {
+      "kind": "watermark",
+      "time": 15
+    },
+    {
+      "kind": "event",
+      "id": "three",
+      "timestamp": 4,
+      "key": "k",
+      "value": 1
+    }
+  ]
+}
